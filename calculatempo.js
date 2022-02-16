@@ -31,3 +31,30 @@ novaoperacao()
 //cada 3 pomodoros é equivalente a 1 hora e 30 minutos
 //faça um programa que diga em horas e minutos a quant
 //idade de pomodoros que o usuário colocar.
+
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+
+  setInterval(function(){
+    
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    display.textContent = minutes + ':' + seconds; 
+
+    if(--timer < 0){
+      timer = duration;
+    }
+  }, 1000);
+};
+
+window.onload = function() {
+  var duration = 60 * 5; // conversão para segundos
+  var display = document.querySelector('#timer') // elemente para show the timer
+
+  startTimer(duration, display); //Inicia a função
+}
+
