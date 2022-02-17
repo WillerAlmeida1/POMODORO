@@ -1,16 +1,20 @@
+//Pega os dados do usuario
 function pomodoro(){
   const tempoPomodoro = Number(prompt('Qual o tempo do seu pomodoro?'))
-  
+
   let quantidade_pomodoro = Number(prompt('Quantos pomodoros'))
 
   let resultado
   mult()
+
+  //Multiplica os dados inseridos pelo usuario
   function mult(){
     resultado = tempoPomodoro * quantidade_pomodoro;
     resultado = resultado / 60;
     alert('Restam ' + `${resultado}`+ ' Horas')
     novaoperacao()
   }
+  //Para refazer ou finalizar de fato código
   function novaoperacao(){
     let opcao = prompt('Você deseja reutilizar o Pomo-Tempo? \n 1 - Sim \n 2 - Não')
 
@@ -24,6 +28,8 @@ function pomodoro(){
     };
   };
 };
+
+//(opcao == 1 ? pomodoro() : '' )
 pomodoro()
 calc_pomodoro()
 novaoperacao()
@@ -31,7 +37,7 @@ novaoperacao()
 //cada 3 pomodoros é equivalente a 1 hora e 30 minutos
 //faça um programa que diga em horas e minutos a quant
 //idade de pomodoros que o usuário colocar.
-
+/*
 function startTimer(duration, display) {
   var timer = duration, minutes, seconds;
 
@@ -56,5 +62,5 @@ window.onload = function() {
   var display = document.querySelector('#timer') // elemente para show the timer
 
   startTimer(duration, display); //Inicia a função
-}
+}*/
 
